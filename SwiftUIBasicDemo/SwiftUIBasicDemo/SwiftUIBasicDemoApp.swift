@@ -14,7 +14,7 @@ struct SwiftUIBasicDemoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ButtonDemo()
+            NativeDemo1()
         }.onChange(of: scenePhase) { (newSencePhase) in
             switch newSencePhase{
             case .active: //表示 APP 正在冶
