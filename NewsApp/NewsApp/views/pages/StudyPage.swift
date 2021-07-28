@@ -10,6 +10,7 @@ struct StudyPage:View {
     
     let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets
     private let padding:CGFloat = 8.0
+    @State var tabIndex:Int = 0
     
     var body: some View{
         VStack(){
@@ -39,6 +40,19 @@ struct StudyPage:View {
                 
                 Image(systemName: "bell")
             }
+            
+            TabbarView(items: ["思想政治","法律法规","职业道德","诚信自律"],isScrollable: true,selection: $tabIndex)
+                .frame(height: 55)
+                .background(Color.blue.opacity(0.1))
+                .onChange(of: tabIndex, perform: { value in
+                    print(value)
+                })
+            
+            TabbarView(items: ["相关资讯","视频课程"],showIndicator: false)
+                .frame(height: 55)
+                .onChange(of: tabIndex, perform: { value in
+                    print(value)
+                })
             
             Spacer()
         }
