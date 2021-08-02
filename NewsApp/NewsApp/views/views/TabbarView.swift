@@ -68,7 +68,7 @@ struct TabbarSubview:View {
                 ForEach(items){item in
                     Text(item.text)
                         .frame(width:itemWidth)
-                        .foregroundColor(selectedIndex == item.index ? .pink : .black)
+                        .foregroundColor(selectedIndex == item.index ? Color(.sRGB, red: 20/255.0, green: 158/255.0, blue: 231/255.0, opacity: 1) : Color(.sRGB, red: 102/255.0, green: 102/255.0, blue: 102/255.0, opacity: 1))
                         .onTapGesture {
                             selectedIndex = item.index
                             selection?.wrappedValue = item.index
@@ -92,7 +92,7 @@ struct TabbarSubview:View {
             if (showIndicator){
                 Divider()
                     .frame(width: itemWidth,height: indicatorHeight)
-                    .background(Color.pink)
+                    .background(Color(.sRGB, red: 20/255.0, green: 158/255.0, blue: 231/255.0, opacity: 1))
                     .offset(x: CGFloat(selectedIndex) * itemWidth)
                     .animation(.easeInOut(duration: 0.2))
             }
