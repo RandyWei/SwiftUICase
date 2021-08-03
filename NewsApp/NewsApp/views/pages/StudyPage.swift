@@ -86,6 +86,6 @@ struct StudyPage:View {
 
 struct StudyPagePreviewer:PreviewProvider {
     static var previews: some View{
-        StudyPage()
+        StudyPage().ignoresSafeArea()
     }
 }

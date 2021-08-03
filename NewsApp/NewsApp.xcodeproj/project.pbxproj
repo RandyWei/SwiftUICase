@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B692D01B26B8ABA300E44B34 /* OverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692D01A26B8ABA300E44B34 /* OverView.swift */; };
 		B6D5810026AF7915001C47CE /* NewsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D580FF26AF7915001C47CE /* NewsAppApp.swift */; };
 		B6D5810226AF7915001C47CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5810126AF7915001C47CE /* ContentView.swift */; };
 		B6D5810426AF7917001C47CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D5810326AF7917001C47CE /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B692D01A26B8ABA300E44B34 /* OverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverView.swift; sourceTree = "<group>"; };
 		B6D580FC26AF7915001C47CE /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D580FF26AF7915001C47CE /* NewsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppApp.swift; sourceTree = "<group>"; };
 		B6D5810126AF7915001C47CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				B6D5813D26B21F87001C47CE /* ArticleListView.swift */,
 				B6D5814326B36BEF001C47CE /* VideoListView.swift */,
 				B6D5814726B36F57001C47CE /* AsnycImage.swift */,
+				B692D01A26B8ABA300E44B34 /* OverView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B692D01B26B8ABA300E44B34 /* OverView.swift in Sources */,
 				B6D5813C26B21D31001C47CE /* SwiperView.swift in Sources */,
 				B6D5813E26B21F87001C47CE /* ArticleListView.swift in Sources */,
 				B6D5814826B36F57001C47CE /* AsnycImage.swift in Sources */,
