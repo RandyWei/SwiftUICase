@@ -16,6 +16,15 @@ struct StudyPage:View {
     @State var showNewsList:Bool = true
     @State var currentPage:Int = 0
     
+    //分类 VM
+    @StateObject private var categoryVM  = CategoryViewModel()
+    //分类数据
+    private var categories:[String] {
+        categoryVM.categories.map { category in
+            category.name
+        }
+    }
+    
     var body: some View{
         VStack(spacing: 0){
             //标题栏
@@ -45,12 +54,13 @@ struct StudyPage:View {
                 Image(systemName: "bell")
             }
             
-            TabbarView(items: ["思想政治","法律法规","职业道德","诚信自律"],isScrollable: true,selection: $tabIndex)
+            TabbarView(items: categories,isScrollable: true,selection: $tabIndex)
                 .frame(height: 55)
                 .background(Color.blue.opacity(0.1))
                 .onChange(of: tabIndex, perform: { value in
                     print(value)
                 })
+                .redacted(reason: categoryVM.loaded ? [] : .placeholder)
             
             ScrollView{
                 LazyVStack(spacing:0){//只支持 iOS14.0+

@@ -54,6 +54,11 @@ struct TabbarSubview:View {
     private let indicatorHeight:CGFloat = 2
     
     private var itemWidth:CGFloat{
+        
+        if items.isEmpty {
+            return 0
+        }
+        
         if items.count > 4 {
             return width / 4
         }
