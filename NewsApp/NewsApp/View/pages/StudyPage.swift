@@ -64,7 +64,7 @@ struct StudyPage:View {
             
             ScrollView{
                 LazyVStack(spacing:0){//只支持 iOS14.0+
-                    TabbarView(items: ["相关资讯","视频课程"],showIndicator: false,selection: $typeIndex)
+                    TabbarView(items: categoryVM.types,showIndicator: false,selection: $typeIndex)
                         .frame(height: 55)
                         .onChange(of: typeIndex, perform: { value in
                             showNewsList = value == 0
@@ -76,9 +76,7 @@ struct StudyPage:View {
                         .padding(.horizontal)
                     
                     if showNewsList {
-                        ArticleListView(articles: [Article(id: "0", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了", mediaName: "来源：“学习强国”学习平台", publishTime: "2020-02-8", content: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了"),
-                                                   Article(id: "1", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了", mediaName: "来源：“学习强国”学习平台", publishTime: "2020-02-8", content: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了"),
-                                                   Article(id: "2", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了", mediaName: "来源：“学习强国”学习平台", publishTime: "2020-02-8", content: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了"),Article(id: "3", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了", mediaName: "来源：“学习强国”学习平台", publishTime: "2020-02-8", content: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了")])
+                        ArticleListView()
                     } else {
                         VideoListView(videos: [
                             VideoModel(id: "0", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了", duration: "时长:10:00:00", imgUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F1114%2F0H120155P2%2F200H1155P2-8-1200.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1630193498&t=2e40f270dfdbef162a2556acfc4143c9"),

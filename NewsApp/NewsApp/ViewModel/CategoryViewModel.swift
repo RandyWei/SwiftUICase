@@ -17,6 +17,10 @@ class CategoryViewModel: ObservableObject {
     @Published private(set) var loaded: Bool = false
     
     
+    //类型数据
+    @Published private(set) var types = ["相关资讯","视频课程"]
+    
+    
     init() {
         list()
     }
@@ -26,10 +30,8 @@ class CategoryViewModel: ObservableObject {
             guard let result = datas else {
                 return
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.categories = result
-                self.loaded = true
-            }
+            self.categories = result
+            self.loaded = true
         }
     }
 }

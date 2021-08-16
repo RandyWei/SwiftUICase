@@ -10,12 +10,13 @@ import SwiftUI
 struct LazyVGridDemo: View {
     var body: some View {
         ScrollView(.horizontal) {
-            LazyHGrid(rows: [GridItem(.fixed(20)),GridItem(.fixed(20))], content: {
-                Text("Placeholder1Placeholder1Placeholder1Placeholder1Placeholder1Placeholder1Placeholder1").background(Color.yellow)
-                Text("Placeholder2Placeholder2Placeholder2Placeholder2Placeholder2").background(Color.green)
-                Text("Placeholder1Placeholder1Placeholder1Placeholder1Placeholder1Placeholder1Placeholder1").background(Color.blue)
-                Text("Placeholder1Placeholder1Placeholder1Placeholder1Placeholder1Placeholder1Placeholder1").background(Color.red)
+            
+            LazyVGrid(columns: [GridItem(.fixed(120)),GridItem(.fixed(120))], content: {
+                ForEach(0..<10){
+                    Text("Placeholder\($0)").background(Color.yellow)
+                }
             })
+            
         }.navigationTitle("LazyVGridDemo")
     }
 }
