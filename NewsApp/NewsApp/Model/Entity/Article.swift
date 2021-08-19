@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Article:Codable,Identifiable {
+struct Article:Codable,Identifiable,Hashable {
     var id:String
     var title:String
     var mediaName:String

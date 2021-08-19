@@ -65,6 +65,13 @@ struct TabbarSubview:View {
         return width / CGFloat(items.count)
     }
     
+    private var itemHeight: CGFloat {
+        if height < indicatorHeight {
+            return indicatorHeight
+        }
+        return height - indicatorHeight
+    }
+    
     @State private var selectedIndex = 0
     
     var body: some View{
@@ -90,7 +97,7 @@ struct TabbarSubview:View {
                             }
                         }
                         .id(item.id)
-                        .frame(height: height - indicatorHeight)
+                        .frame(height: itemHeight)
                 }
             }
             
@@ -101,7 +108,11 @@ struct TabbarSubview:View {
                     .offset(x: CGFloat(selectedIndex) * itemWidth)
                     .animation(.easeInOut(duration: 0.2))
             }
-            
         }
+        .onAppear {
+            selectedIndex = selection?.wrappedValue ?? 0
+        }
+        
+        
     }
 }

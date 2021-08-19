@@ -13,7 +13,12 @@ struct StudyPage:View {
     @State var tabIndex:Int = 0
     
     @State var typeIndex:Int = 0 //类型
-    @State var showNewsList:Bool = true
+    
+    //是否显示新闻列表
+    var showNewsList:Bool{
+        typeIndex == 0
+    }
+    
     @State var currentPage:Int = 0
     
     //分类 VM
@@ -25,6 +30,7 @@ struct StudyPage:View {
         }
     }
     
+    
     var body: some View{
         VStack(spacing: 0){
             //标题栏
@@ -32,7 +38,7 @@ struct StudyPage:View {
                 Image("tool_bar_left_icon")
                     .resizable()
                     .frame(width: 69,height: 25)
-                
+
                 //搜索框
                 HStack{
                     Image(systemName: "magnifyingglass")
@@ -43,14 +49,13 @@ struct StudyPage:View {
                 .padding(.vertical,8.0)
                 .background(Color.white.opacity(0.3))
                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                
+
                 HStack{
                     Text("学习\n进度")
                     Text("100%")
                 }
                 .foregroundColor(.white)
-                
-                
+
                 Image(systemName: "bell")
             }
             
@@ -66,29 +71,25 @@ struct StudyPage:View {
                 LazyVStack(spacing:0){//只支持 iOS14.0+
                     TabbarView(items: categoryVM.types,showIndicator: false,selection: $typeIndex)
                         .frame(height: 55)
-                        .onChange(of: typeIndex, perform: { value in
-                            showNewsList = value == 0
-                        })
                     
                     SwiperView(items: [
-                                Image("banner1").resizable(),Image("banner2").resizable(),Image("banner3").resizable(),Image("banner4").resizable()], currentPage: $currentPage).aspectRatio(7/3,contentMode: .fit)
+                        Image("newbanner1").resizable(),
+                        Image("newbanner2").resizable(),
+                        Image("newbanner3").resizable(),
+                        Image("newbanner4").resizable()
+                                ], currentPage: $currentPage)
                         .cornerRadius(12.0)
                         .padding(.horizontal)
                     
                     if showNewsList {
                         ArticleListView()
                     } else {
-                        VideoListView(videos: [
-                            VideoModel(id: "0", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了", duration: "时长:10:00:00", imgUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F1114%2F0H120155P2%2F200H1155P2-8-1200.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1630193498&t=2e40f270dfdbef162a2556acfc4143c9"),
-                           VideoModel(id: "1", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了", duration: "时长:10:00:00", imgUrl: ""),
-                           VideoModel(id: "2", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了", duration: "时长:10:00:00", imgUrl: ""),
-                           VideoModel(id: "3", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了", duration: "时长:10:00:00", imgUrl: ""),
-                            VideoModel(id: "5", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩：您辛苦了", duration: "时长:10:00:00", imgUrl: "")])
+                        VideoListView()
                     }
-                    
                 }
             }
         }
+        .navigationBarHidden(true)
     }
 }
 

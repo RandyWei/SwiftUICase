@@ -21,11 +21,16 @@ struct Swiper<SwiperItem:View>:UIViewControllerRepresentable {
         let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.dataSource = context.coordinator
         pageViewController.delegate = context.coordinator
+        pageViewController.view.backgroundColor = .blue
+        
+//        pageViewController.view.frame = CGRect(origin: .zero, size: CGSize(width: 428.0, height: 170.0))
         return pageViewController
     }
     
     func updateUIViewController(_ uiViewController: UIPageViewController, context: Context) {
         uiViewController.setViewControllers([context.coordinator.controllers[currentPage]], direction: .forward, animated: true, completion: nil)
+//        print(UIScreen.main.bounds)
+//        print(uiViewController.view.frame)
     }
     
     func makeCoordinator() -> Coordinator {
@@ -40,7 +45,12 @@ struct Swiper<SwiperItem:View>:UIViewControllerRepresentable {
         var controllers = [UIViewController]()
         init(_ parent:Swiper) {
             self.parent = parent
-            controllers = parent.items.map({ UIHostingController(rootView: $0) })
+            controllers = parent.items.map({
+                let hostingController = UIHostingController(rootView: $0)
+//                hostingController.view.frame = CGRect(origin: .zero, size: CGSize(width: 428.0, height: 170.0))
+                hostingController.view.backgroundColor = UIColor(red: CGFloat(Float.random(in: 0...1)), green: CGFloat(Float.random(in: 0...1)), blue: CGFloat(Float.random(in: 0...1)), alpha: 1)
+                return hostingController
+            })
         }
         
         func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

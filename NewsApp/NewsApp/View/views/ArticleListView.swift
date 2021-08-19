@@ -12,7 +12,8 @@ struct ArticleListView:View {
     @StateObject private var articleVM = ArticleViewModel()
     
     var body: some View{
-        ForEach(articleVM.articles) { article in
+        //, id: \.self
+        ForEach(articleVM.articles,id: \.self) { article in
             NavigationLink(destination: ArticleDetail(id: article.id)) {
                 VStack(alignment: .leading){
                     Text(article.title)

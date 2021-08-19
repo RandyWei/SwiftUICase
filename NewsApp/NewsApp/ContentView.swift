@@ -15,8 +15,7 @@ struct ContentView: View {
                     .tabItem {
                         Image("study_icon")
                         Text("学习")
-                    }
-                    .ignoresSafeArea( edges: .top)
+                    }.ignoresSafeArea(edges: .top)
                 TaskPage()
                     .tabItem {
                     Image("task_icon")
