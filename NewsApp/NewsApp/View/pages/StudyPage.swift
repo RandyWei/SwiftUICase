@@ -30,6 +30,13 @@ struct StudyPage:View {
         }
     }
     
+    //用户 viewModel
+    @EnvironmentObject var userVM: UserViewModel
+    
+    //是否触发登录页面跳转
+    @State var showLogin:Bool = false
+    @State var showPointDetail:Bool = false
+    
     
     var body: some View{
         VStack(spacing: 0){
@@ -50,11 +57,26 @@ struct StudyPage:View {
                 .background(Color.white.opacity(0.3))
                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
 
-                HStack{
-                    Text("学习\n进度")
-                    Text("100%")
+                NavigationLink(destination: Text("LOGIN"), isActive: $showLogin) {
+                    Text("")
                 }
-                .foregroundColor(.white)
+                
+                NavigationLink(destination: LoginView(), isActive: $showPointDetail) {
+                    HStack{
+                        Text("学习\n进度")
+                        Text(userVM.isLogged ? "100%" : "%0")
+                    }
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        if !userVM.isLogged {
+                            //未登录，跳转到登录页
+                            showLogin.toggle()
+                        } else {
+                            //已登录，跳到积分详情页
+                            showPointDetail.toggle()
+                        }
+                    }
+                }
 
                 Image(systemName: "bell")
             }
@@ -72,14 +94,18 @@ struct StudyPage:View {
                     TabbarView(items: categoryVM.types,showIndicator: false,selection: $typeIndex)
                         .frame(height: 55)
                     
-                    SwiperView(items: [
-                        Image("newbanner1").resizable(),
-                        Image("newbanner2").resizable(),
-                        Image("newbanner3").resizable(),
-                        Image("newbanner4").resizable()
-                                ], currentPage: $currentPage)
-                        .cornerRadius(12.0)
-                        .padding(.horizontal)
+                    List{
+                        SwiperView(items: [
+                            Image("newbanner1").resizable(),
+                            Image("newbanner2").resizable(),
+                            Image("newbanner3").resizable(),
+                            Image("newbanner4").resizable()
+                                    ], currentPage: $currentPage)
+                            .cornerRadius(12.0)
+                            .padding(.horizontal)
+                            .listRowInsets(EdgeInsets())
+                    }
+                    .aspectRatio(7/3,contentMode: .fit)
                     
                     if showNewsList {
                         ArticleListView()

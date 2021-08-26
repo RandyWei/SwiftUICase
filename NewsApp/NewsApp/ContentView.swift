@@ -27,6 +27,7 @@ struct ContentView: View {
                     Text("我的")
                 }.ignoresSafeArea(edges: .top)
             }
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

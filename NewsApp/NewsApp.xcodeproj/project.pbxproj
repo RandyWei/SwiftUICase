@@ -24,6 +24,8 @@
 		B63AD7AF26CC6E8C00681EA9 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AD7AE26CC6E8C00681EA9 /* VideoService.swift */; };
 		B63AD7B126CC6EFF00681EA9 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AD7B026CC6EFF00681EA9 /* VideoViewModel.swift */; };
 		B63AD7B526CF133700681EA9 /* VideoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AD7B426CF133700681EA9 /* VideoDetail.swift */; };
+		B63AD7B826D5AB8C00681EA9 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AD7B726D5AB8C00681EA9 /* UserViewModel.swift */; };
+		B63AD7BA26D6FD8C00681EA9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AD7B926D6FD8C00681EA9 /* LoginView.swift */; };
 		B65D992026B9FF4C008B5A83 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D991F26B9FF4C008B5A83 /* SizePreferenceKey.swift */; };
 		B65D992226BA02CF008B5A83 /* RoundedCourners.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D992126BA02CF008B5A83 /* RoundedCourners.swift */; };
 		B65D992426BA0491008B5A83 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D992326BA0491008B5A83 /* ChartView.swift */; };
@@ -85,6 +87,8 @@
 		B63AD7AE26CC6E8C00681EA9 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
 		B63AD7B026CC6EFF00681EA9 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		B63AD7B426CF133700681EA9 /* VideoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetail.swift; sourceTree = "<group>"; };
+		B63AD7B726D5AB8C00681EA9 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		B63AD7B926D6FD8C00681EA9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B65D991F26B9FF4C008B5A83 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
 		B65D992126BA02CF008B5A83 /* RoundedCourners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCourners.swift; sourceTree = "<group>"; };
 		B65D992326BA0491008B5A83 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				B63AD74926C339AB00681EA9 /* CategoryViewModel.swift */,
 				B63AD74D26C488E600681EA9 /* ArticleViewModel.swift */,
 				B63AD7B026CC6EFF00681EA9 /* VideoViewModel.swift */,
+				B63AD7B726D5AB8C00681EA9 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				B6D5813026AF7A4B001C47CE /* ProfilePage.swift */,
 				B63AD79E26C5D95400681EA9 /* ArticleDetail.swift */,
 				B63AD7B426CF133700681EA9 /* VideoDetail.swift */,
+				B63AD7B926D6FD8C00681EA9 /* LoginView.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 				B63AD7B126CC6EFF00681EA9 /* VideoViewModel.swift in Sources */,
 				B63AD7B526CF133700681EA9 /* VideoDetail.swift in Sources */,
 				B6D5813A26B21B7B001C47CE /* SwiperControl.swift in Sources */,
+				B63AD7B826D5AB8C00681EA9 /* UserViewModel.swift in Sources */,
 				B6D5814426B36BEF001C47CE /* VideoListView.swift in Sources */,
 				B6D5813626B0C529001C47CE /* TabbarView.swift in Sources */,
 				B63AD7A726C9D18C00681EA9 /* BottomSheet.swift in Sources */,
@@ -479,6 +486,7 @@
 				B63AD73F26C335D600681EA9 /* Response.swift in Sources */,
 				B63AD74C26C4888600681EA9 /* ArticleService.swift in Sources */,
 				B6D5812D26AF79FC001C47CE /* StudyPage.swift in Sources */,
+				B63AD7BA26D6FD8C00681EA9 /* LoginView.swift in Sources */,
 				B63AD74A26C339AB00681EA9 /* CategoryViewModel.swift in Sources */,
 				B63AD73D26C335B600681EA9 /* Category.swift in Sources */,
 			);

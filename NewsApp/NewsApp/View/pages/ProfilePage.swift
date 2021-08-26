@@ -59,6 +59,7 @@ struct ProfilePage:View {
             
             Spacer()
         }
+        .navigationBarHidden(true)
     }
 }
 
