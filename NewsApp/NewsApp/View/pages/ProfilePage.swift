@@ -69,3 +69,21 @@ struct ProfilePagePreviewer:PreviewProvider {
             .ignoresSafeArea(edges: .top)
     }
 }
+
+struct Test {
+    func name(_ number:Number) where Number : Numeric {
+        
+    }
+    
+    func xxxx() {
+        
+        let intV:Int = 10
+        name(intV)
+        
+        let douV:Double = 10.0
+        name(douV)
+        
+        let floV:Float = 6.0
+        name(floV)
+    }
+}
